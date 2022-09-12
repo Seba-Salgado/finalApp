@@ -22,3 +22,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+
+// Rutas para administrador:
+
+use App\Http\Controllers\AdminUsersController;
+
+Route::resource('/admin/users',AdminUsersController::class);

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->foreignId('role_id')
+            $table->foreignId('foto_id')
                         ->after('id')
                         ->index()
                         ->nullable()
@@ -33,10 +33,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-
-            //drop foreign key
-            $table->dropForeign(['role_id']);
-            $table->dropColumn('role_id');
+            //
+            $table->dropForeign(['foto_id']);
+            $table->dropColumn('foto_id');
         });
     }
 };
